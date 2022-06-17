@@ -3,11 +3,17 @@
 {
   const mainImage = document.getElementById('mainImage');
   const mainImageStock = [
-    "img/dog01.jpeg",
-    "img/dog02.jpeg",
-    "img/dog03.jpeg",
-    "img/dog04.jpeg",
+    "img/banner01.jpeg",
+    "img/banner02.jpeg",
+    "img/banner03.jpeg",
+    "img/banner04.jpeg",
+    "img/banner05.jpeg",
+    "img/banner06.jpeg",
   ];
+
+  const mainOpen = document.querySelectorAll('.mainOpen');
+  const mainPlus = document.querySelectorAll('.plus');
+  const mainAnimal = document.querySelectorAll('.mainAnimal');
 
   function mainImageScroll(){
     setTimeout(() =>{
@@ -35,6 +41,19 @@
     li.appendChild(img);
     mainImage.appendChild(li);
   }
+
+  mainOpen.forEach((open, index) =>{
+    open.addEventListener('click', e =>{
+      e.preventDefault();
+      mainAnimal[index].classList.toggle('hidden');
+
+      if(mainAnimal[index].classList.contains('hidden')){
+        mainPlus[index].textContent = '+'
+      } else {
+        mainPlus[index].textContent = '-'
+      }
+    });
+  });
 
   mainImageScroll();
 }
