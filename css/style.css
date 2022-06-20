@@ -464,6 +464,14 @@ footer > small{
     vertical-align: middle;
   }
 
+  header > .header-a{
+    left: 15px;
+  }
+
+  header > .header-b{
+    right: 15px;
+  }
+
   .container > .link > a{
     width: 80%;
   }
